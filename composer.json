@@ -10,14 +10,14 @@
     ],
     "require": {},
 		"scripts": {
-			"post-autoload-dump": [
-				"php vendor/yohn/composer-copy-after-action/copy"
-			],
-			"post-install-cmd": [
-				"php vendor/yohn/composer-copy-after-action/copy"
-			],
-			"post-update-cmd": [
-				"php vendor/yohn/composer-copy-after-action/copy"
-			]
+ 	   "post-install-cmd": [
+ 		   "php vendor/yohn/composer-copy-after-action/script.php $(pwd)"
+ 	   ],
+ 	   "post-update-cmd": [
+ 		   "php vendor/yohn/composer-copy-after-action/script.php $(pwd)"
+ 	   ],
+ 	   "post-autoload-dump": [
+ 		   "php vendor/yohn/composer-copy-after-action/script.php $(pwd)"
+ 	   ]
 		}
 }
