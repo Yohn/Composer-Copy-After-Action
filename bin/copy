@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+// bin/copyConfig
+
+$source = __DIR__.'/../vendor/yohns/composer-copy-after-action/test-copy.php';
+$destination = __DIR__.'/../../lib/Config/test-copy.php';
+
+// Make sure the destination directory exists
+if (!is_dir(dirname($destination))) {
+	mkdir(dirname($destination), 0755, true);
+}
+if(is_file($destination)) {
+	//$s = include $source;
+	//$d = include $destination;
+	//sort($s);
+	//sort($d);
+	//if($s !== $d) {
+		rename($destination, $destination.'-backup.php');
+	//}
+}
+if (!copy($source, $destination)) {
+	echo "Failed to copy $source...\n";
+} else {
+	echo "Config file copied to $destination\n";
+}

@@ -1,0 +1,23 @@
+{
+    "name": "yohns/composer-copy-after-action",
+    "description": "testing copying",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yohn",
+            "email": "john.skem9@gmail.com"
+        }
+    ],
+    "require": {},
+		"scripts": {
+			"post-autoload-dump": [
+				"php vendor/yohns/composer-copy-after-action/bin/copy $(pwd)"
+			],
+			"post-install-cmd": [
+				"php vendor/yohns/composer-copy-after-action/bin/copy $(pwd)"
+			],
+			"post-update-cmd": [
+				"php vendor/yohns/composer-copy-after-action/bin/copy $(pwd)"
+			]
+		}
+}
