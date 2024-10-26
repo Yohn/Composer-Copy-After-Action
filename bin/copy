@@ -1,6 +1,10 @@
 #!/usr/bin/env php
 <?php
 // bin/copyConfig
+namespace Composer;
+
+$GLOBALS['_composer_bin_dir'] = __DIR__;
+$GLOBALS['_composer_autoload_path'] = __DIR__ . '/..'.'/autoload.php';
 
 $source = __DIR__.'/../vendor/yohns/composer-copy-after-action/test-copy.php';
 $destination = __DIR__.'/../../lib/Config/test-copy.php';
