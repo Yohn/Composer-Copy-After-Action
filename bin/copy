@@ -14,9 +14,11 @@ $destination = __DIR__.'/../../lib/Config/test-copy.php';
 //exit(0);
 // Make sure the destination directory exists
 if (!is_dir(dirname($destination))) {
+	echo 'Config directory missing, creating now..';
 	mkdir(dirname($destination), 0755, true);
 }
 if(is_file($destination)) {
+	echo 'Config file found, re-naming it for backup.';
 	rename($destination, $destination.'-backup.php');
 }
 if (!copy($source, $destination)) {
