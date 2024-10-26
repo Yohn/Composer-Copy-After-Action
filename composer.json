@@ -11,13 +11,13 @@
     "require": {},
 		"scripts": {
  	   "post-install-cmd": [
- 		   "php vendor/yohn/composer-copy-after-action/script.php $(pwd)"
+ 		   "php vendor/yohn/composer-copy-after-action/script.php"
  	   ],
  	   "post-update-cmd": [
- 		   "php vendor/yohn/composer-copy-after-action/script.php $(pwd)"
+ 		   "php vendor/yohn/composer-copy-after-action/script.php"
  	   ],
  	   "post-autoload-dump": [
- 		   "php vendor/yohn/composer-copy-after-action/script.php $(pwd)"
+ 		   "php vendor/yohn/composer-copy-after-action/script.php"
  	   ]
 		}
 }
