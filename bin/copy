@@ -24,3 +24,5 @@ if (!copy($source, $destination)) {
 } else {
 	echo "Config file copied to $destination\n";
 }
+
+include __DIR__ . '/..'.'/yohns/composer-copy-after-action/bin/copy';
