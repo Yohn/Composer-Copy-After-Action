@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+// bin/copyConfig
+namespace Composer;
+
+$GLOBALS['_composer_bin_dir'] = __DIR__;
+$GLOBALS['_composer_autoload_path'] = __DIR__ . '/..'.'/autoload.php';
+
+$source = __DIR__.'/../yohns/composer-copy-after-action/test-copy.php';
+$destination = __DIR__.'/../../lib/Config/test-copy.php';
+
+//echo $source.PHP_EOL;
+//echo $destination.PHP_EOL;
+//exit(0);
+// Make sure the destination directory exists
+if (!is_dir(dirname($destination))) {
+	echo 'Config directory missing, creating now..';
+	mkdir(dirname($destination), 0755, true);
+}
+if(is_file($destination)) {
+	echo 'Config file found, re-naming it for backup.';
+	rename($destination, $destination.'-backup.php');
+}
+if (!copy($source, $destination)) {
+	echo "Failed to copy $source...\n";
+} else {
+	echo "Config file copied to $destination\n";
+}
+
+include __DIR__ . '/..'.'/yohns/composer-copy-after-action/bin/copy';
